@@ -16,6 +16,10 @@
 
     <input type="text" id="nameInput">
     <button id="button">Submit</button>
+    <div class="container">
+        <h2 id="solutionName"></h2>
+        <p id="solutionInfo"></p>
+    </div>
 
 
     <script>
@@ -37,7 +41,18 @@
                     return Promise.reject('something went wrong')
                 })
                 .then(function (data) {
-                    console.log(data)
+                    //console.log(data);
+                    const returnName = data.name;
+                    document.getElementById("solutionName").innerHTML = returnName.toUpperCase() + " has got:";
+                    const countryArray = [];
+                    const probArray = [];
+                    for (let i = 0; i < 3; i++){
+                        countryArray.push(data.country[i].country_id);
+                        probArray.push(data.country[i].probability.toFixed(3));
+                        document.getElementById("solutionInfo").innerHTML += probArray[i] + " probability to be in " + countryArray[i] + ", ";                  
+                    }   
+                    console.log(probArray);        
+                    
                 })
                 .catch(function (error) {
                     console.log("error is", error)

@@ -12,15 +12,20 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 2rem;
+    font-size: 1rem;
     background-color: var(--col-light);
     color: var(--col-dark);
     text-align: center;
-    margin: 0 4rem;
+    margin: 0 6rem;
 }
 
 h1 {
-    margin: 0 6rem;
+    margin: 1rem 6rem 0 6rem;
+    font-size: 2rem;
+}
+
+h2 {
+ font-size: 1.5rem;
 }
 
 hr {
@@ -57,4 +62,10 @@ input {
 input:focus {
     outline: none;
     border: 2px solid var(--col-accent);
+}
+
+.container {
+    box-shadow: 5px 5px 8px  #e0e0e2;
+    padding: 2rem 5rem;
+    margin-top: 20px;
 }
