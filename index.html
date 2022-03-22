@@ -10,15 +10,44 @@
 </head>
 
 <body>
-    <h1>Which nationality is this name from?</h1>
-    <hr>
 
-        <input type="text" id="name">
-        <button id="button">Submit</button>
+    <!--    <h1>Which nationality is this name from?</h1>
+    <hr> -->
+
+    <input type="text" id="nameInput">
+    <button id="button">Submit</button>
 
 
-    <script src="index.js"></script>
+    <script>
+        const btn = document.getElementById("button");
+        const input = document.querySelector("#nameInput");
+        btn.addEventListener("click", newFunction)
+
+        function newFunction(event) {
+ 
+            let nameValue = this.previousElementSibling.value;
+            console.log("You are searching for the name " + nameValue);
+            const URL = `https://api.nationalize.io/?name=${nameValue}`;
+
+            fetch(URL)
+                .then(function (response) {
+                    if (response.ok) {
+                        return response.json()
+                    }
+                    return Promise.reject('something went wrong')
+                })
+                .then(function (data) {
+                    console.log(data)
+                })
+                .catch(function (error) {
+                    console.log("error is", error)
+                })
+        }
+    </script>
 
 </body>
 
 </html>
+
+
+<!-- Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at https://api.nationalize.io/?name=peter. (Reason: CORS request did not succeed). Status code: (null) -->
