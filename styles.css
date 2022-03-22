@@ -16,6 +16,11 @@ body {
     background-color: var(--col-light);
     color: var(--col-dark);
     text-align: center;
+    margin: 0 4rem;
+}
+
+h1 {
+    margin: 0 6rem;
 }
 
 hr {
