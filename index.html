@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which Nationality</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1 id="test">Which nationality is this name from?</h1>
+    <hr>
+
+    <form action="/" method="post">
+        <input type="text">
+        <button id="button" type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("button").addEventListener("click", getCountry)
+
+        function getCountry(e) {
+            document.getElementById("test").innerHTML = " Hello";
+            let name = e.target.value;
+            let URL = `https://api.nationalize.io/?name=${name}`;
+
+            fetch(URL)
+                .then(function (response) {
+                    if (response.ok)
+                        return response.json()
+                    else
+                        return Promise.reject("Failed!")
+                })
+
+                .then(function (data) {
+
+                   console.log(data)
+
+                    return
+                })
+                .catch(function (err) {
+                    console.log("Something went wrong: " + err)
+                })
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+:root {
+    --col-dark: rgb(45, 55, 58);
+    --col-light: white;
+    --col-accent: rgb(31, 238, 210);
+}
+
+*, 
+*::after, 
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    background-color: var(--col-light);
+    color: var(--col-dark);
+    text-align: center;
+}
+
+hr {
+    width: 80%;
+    margin-bottom: 50px;
+    border: 1px solid var(--col-dark)
+}
+
+form {
+    margin: 0 15rem;
+}
+
+button {
+    background-color: var(--col-accent);
+    color: var(--col-dark);
+    display: inline-block;
+    height: 50px;
+    width: 100%;
+    border:var(--col-accent);
+    border-radius: 10px;
+    font-size: 1.3rem;
+}
+
+input {
+    height: 50px;
+    display: inline-block;
+    width: 100%;
+    border: 2px solid var(--col-dark);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid var(--col-accent);
+}
