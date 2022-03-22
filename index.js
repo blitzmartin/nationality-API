@@ -1,13 +1,10 @@
-console.log("JS script executed");
-
 const btn = document.getElementById("button");
-
 btn.addEventListener("click", getCountry)
 
-function getCountry(e) {
-    console.log(e);
+function getCountry() {
 
-    let name = e.target.value;
+    // let name = this.previousElementSibling.value;
+    let name = document.querySelector("#name").value;
     let URL = `https://api.nationalize.io/?name=${name}`;
 
     fetch(URL)
