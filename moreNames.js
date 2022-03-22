@@ -6,7 +6,6 @@
         function newFunction(event) {
 
             let nameValue = this.previousElementSibling.value;
-            console.log("You are searching for the name " + nameValue);
             const URL = `https://api.nationalize.io/?name=${nameValue}`;
             var tempArray = []
             tempArray = nameValue.split(",");

@@ -6,7 +6,6 @@
         function newFunction(event) {
 
             let nameValue = this.previousElementSibling.value;
-            console.log("You are searching for the name " + nameValue);
             const URL = `https://api.nationalize.io/?name=${nameValue}`;
      
 
@@ -28,9 +27,6 @@
                         probArray.push(data.country[i].probability.toFixed(3));
                         document.getElementById("solutionInfo").innerHTML += probArray[i] + " probability to be in " + countryArray[i] + ", ";
                     }
-
-
-
                 })
                 .catch(function (error) {
                     console.log("error is", error)
