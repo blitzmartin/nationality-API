@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <h1 id="test">Which nationality is this name from?</h1>
+    <h1>Which nationality is this name from?</h1>
     <hr>
 
     <form action="/" method="post">
@@ -18,34 +18,8 @@
         <button id="button" type="submit">Submit</button>
     </form>
 
-    <script>
-        document.getElementById("button").addEventListener("click", getCountry)
+    <script src="index.js"></script>
 
-        function getCountry(e) {
-            document.getElementById("test").innerHTML = " Hello";
-            let name = e.target.value;
-            let URL = `https://api.nationalize.io/?name=${name}`;
-
-            fetch(URL)
-                .then(function (response) {
-                    if (response.ok)
-                        return response.json()
-                    else
-                        return Promise.reject("Failed!")
-                })
-
-                .then(function (data) {
-
-                   console.log(data)
-
-                    return
-                })
-                .catch(function (err) {
-                    console.log("Something went wrong: " + err)
-                })
-        }
-
-    </script>
 </body>
 
 </html>
